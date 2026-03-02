@@ -32,6 +32,8 @@ async function loadVignettes() {
             tr.innerHTML = `
                 <td>${v.id}</td>
                 <td>${v.vehicle_id}</td>
+                <td>${v.vehicle.country_code}</td>
+                <td>${v.vehicle.plate_number}</td>
                 <td>${v.type}</td>
                 <td>${v.category}</td>
                 <td>${v.region || '-'}</td>
@@ -165,7 +167,7 @@ document.querySelector('#vignettes-table tbody').addEventListener('click', async
             document.getElementById('save-btn').innerText = 'Update';
             
             // Scroll to form
-            document.getElementById('vignette-form').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('alert').scrollIntoView({ behavior: 'smooth' });
             showAlert(`Editing vignette id: ${id}`);
         } catch (err) {
             console.error('Error:', err);

@@ -10,4 +10,9 @@ class Vehicle extends Model
         'country_code',
         'plate_number',
     ];
+
+    public function vignettes()
+    {
+        return $this->hasMany(Vignette::class);
+    }
 }

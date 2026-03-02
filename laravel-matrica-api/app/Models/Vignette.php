@@ -15,4 +15,9 @@ class Vignette extends Model
         'valid_from',
         'valid_to',
     ];
+
+    public function vehicle()
+    {
+        return $this->belongsTo(Vehicle::class);
+    }
 }

@@ -12,7 +12,7 @@ class VignetteController extends Controller
      */
     public function index(Request $request)
     {
-        $vignettes = Vignette::all();
+        $vignettes = Vignette::with('vehicle')->get();
         return response()->json($vignettes);
     }
 
